@@ -1,0 +1,11 @@
+image: nginx:1.24-alpine
+replicaCount: 2
+service:
+  name: simple-nginx
+  port: 8080
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCpu: 80
